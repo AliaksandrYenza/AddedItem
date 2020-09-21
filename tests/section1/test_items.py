@@ -9,10 +9,10 @@ class TestAddTest():
     @pytest.mark.parametrize('link', "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/")
     def test_b(self, browser, link):
         browser.get(link)
-        browser.implicitly_wait(10)
+        #browser.implicitly_wait(10)
 
 
-        bnt = WebDriverWait(browser, 10).until(
+"""        bnt = WebDriverWait(browser, 10).until(
             EC.presence_of_element_located((By.CSS_SELECTOR, 'button.btn.btn-lg.btn-primary.btn-add-to-basket'))
         )
         bnt.click()
@@ -26,4 +26,4 @@ class TestAddTest():
         ).text
         expected_res = original_total + 19.99
 
-        assert restxt, expected_res
+        assert restxt, expected_res"""

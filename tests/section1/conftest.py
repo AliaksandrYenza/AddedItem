@@ -35,12 +35,12 @@ def browser(request):
 
         fp = webdriver.FirefoxProfile()
 
-        if language == 'ru':
-            fp.set_preference("intl.accept_languages", 'ru')
-        elif language == 'en':
-            fp.set_preference("intl.accept_languages", 'en-gb')
-        else:
-            raise pytest.UsageError("--language should be en or ru")
+        #if language == 'ru':
+        #    fp.set_preference("intl.accept_languages", 'ru')
+        #elif language == 'en':
+        #    fp.set_preference("intl.accept_languages", 'en-gb')
+        #else:
+        #    raise pytest.UsageError("--language should be en or ru")
         browser = webdriver.Firefox(firefox_profile=fp)
     else:
         raise pytest.UsageError("--browser_name should be chrome or firefox")
