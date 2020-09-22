@@ -12,7 +12,7 @@ class Test01t():
 
 
     #@pytest.mark.parametrize('link', "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/")
-    def test_b(self, browser):
+    def test_click_button(self, browser):
         link = 'http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/'
         browser.get(link)
 
@@ -22,4 +22,8 @@ class Test01t():
         )
         btn_add.click()
 
-        assert btn_add, "Error: basket button does not exist"
+        actual_res = WebDriverWait(browser, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@id="messages"]/div[1]/div/text()'))
+        )
+
+        assert actual_res, 'has been added to your basket.'
