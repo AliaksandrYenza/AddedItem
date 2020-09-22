@@ -13,7 +13,7 @@ class Test01t():
 
     #@pytest.mark.parametrize('link', "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/")
     def test_click_button(self, browser):
-        link = 'http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/'
+        link = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/'
         browser.get(link)
 
 
@@ -23,7 +23,7 @@ class Test01t():
         btn_add.click()
 
         actual_res = WebDriverWait(browser, 10).until(
-            EC.visibility_of_element_located((By.XPATH, '//*[@id="messages"]/div[1]/div/text()'))
+            EC.visibility_of_element_located((By.CSS_SELECTOR, '.alert.alert-safe.alert-noicon.alert-info'))
         )
 
-        assert actual_res, 'has been added to your basket.'
+        assert actual_res, True
